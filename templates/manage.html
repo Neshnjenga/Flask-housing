@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    {% for gain in fetch %}
+    <tr>
+        <td>{{gain[1]}}</td>
+        <td>{{gain[2]}}</td>
+        <td>{{gain[3]}}</td>
+        <td><img src="data:image;base64,{{gain[4]}}"  height="50" width="50" alt=""></td>
+        <td>
+            <a href="/update/{{gain[0]}}"><button class="btn btn-primary">Update</button></a>
+            <a href="/delete/{{gain[0]}}"> <button class="btn btn-danger" onclick="return(confirm('Are you sure u want delete' ))">Delete</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

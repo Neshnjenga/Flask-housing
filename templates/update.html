@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="post" class="products" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="text" name="name" placeholder="Enter the name of the place" value="{{data[1]}}" >
+        </div>
+        <div class="col-lg-12">
+            <input type="text" name="description" placeholder="Give us the description of the place" value="{{data[2]}}">
+        </div>
+        <div class="col-lg-12">
+        <input type="text" name="amount" placeholder="price of the house" value="{{data[3]}}">
+        </div>
+        <div class="col-lg-12">
+            <input type="file" name="image" value="{{data[4]}}">
+        </div>
+        <div class="col-lg-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

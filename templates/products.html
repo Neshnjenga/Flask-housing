@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="post" class="products" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="text" name="name" placeholder="Enter the name of the place" required >
+        </div>
+        <div class="col-lg-12">
+            <input type="text" name="description" placeholder="Give us the description of the place" required>
+        </div>
+        <div class="col-lg-12">
+        <input type="text" name="amount" placeholder="price of the house" required>
+        </div>
+        <div class="col-lg-12">
+            <input type="file" name="image" required>
+        </div>
+        <div class="col-lg-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
