@@ -2,15 +2,15 @@
 {% block body %}
 <div class="container">
     <div class="row">
-        {% for feet in fetch %}
+        {% for pip in fetch %}
         <div class="col-lg-4">
             <div class="elements">
                 <div class="thumbnail">
-                    <img src="data:image;base64,{{feet[4]}}" alt="">
+                    <img src="data:image;base64,{{pip[4]}}" alt="">
                 </div>
-                <h3>{{feet[1]}}</h3>
-                <p>{{feet[2]}}</p>
-                <h5>KSH {{feet[3]}}</h5>
+                <h3>{{pip[1]}}</h3>
+                <p>{{pip[2]}}</p>
+                <h5>KSH {{pip[3]}}</h5>
             </div>
         </div>
         {% endfor %}
