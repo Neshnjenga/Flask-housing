@@ -11,7 +11,7 @@
         }
         form{
         text-align: center;
-        background-color:white;
+        background-color: white;
         margin: 100px auto;
         height: auto;
         width: 300px;
@@ -44,11 +44,9 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-        <input type="text" name="username" placeholder="Enter your username">
-        <input type="password" name="password" placeholder=" Enter your password ">
-        <button type="submit" class="btn btn-success">Sign in</button>
-        <p>Dont have an account <a href="/register" style="text-decoration: none; color: green; font-style: italic;">Register</a></p>
-        <p>Forgot password <a href="/forgot" class="btn btn-success">Forgot</a></p>
+        <input type="password" name="password" placeholder=" Enter your password " >
+        <input type="password" name="confirm" placeholder="Confirm password" >
+        <button type="submit" class="btn btn-success">Sign up</button>
     </form>
 </body>
 </html>

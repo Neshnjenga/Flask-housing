@@ -44,11 +44,40 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-        <input type="text" name="username" placeholder="Enter your username">
-        <input type="password" name="password" placeholder=" Enter your password ">
-        <button type="submit" class="btn btn-success">Sign in</button>
-        <p>Dont have an account <a href="/register" style="text-decoration: none; color: green; font-style: italic;">Register</a></p>
-        <p>Forgot password <a href="/forgot" class="btn btn-success">Forgot</a></p>
+        <input type="text" name="otp" placeholder="Verify account">
+        <button type="submit" class="btn btn-success">Verify</button>
+        <p id="timer"></p>
+        <p style="display:none;" id="Resend"><a href="/Resend">Resend link</a></p>
     </form>
+    <script>
+        var remainingTime={{remainingTime}};
+
+        function startOtpcountdown(){
+            var timer=document.getElementById('timer');
+            var Resend=document.getElementById('Resend');
+            var interval=setInterval(function(){
+                var minutes=Math.floor(remainingTime / 60);
+                var seconds=(remainingTime % 60);
+                timer.innerHTML='Otp expires in ' + minutes + ':' +  seconds;
+                if(remainingTime <= 0){
+                    clearInterval(interval);
+                    timer.innerHTML='Otp Expired';
+                    Resend.style.display='block';
+                }
+                else{
+                    remainingTime--;
+                }
+            },1000)
+        }
+        window.onload=function(){
+            if(remainingTime >= 0){
+                startOtpcountdown();
+            }
+            else{
+                document.getElementById('timer').innerHTML='Otp Expired';
+                document.getElementById('Resend').style.display='block';
+            }
+        }
+    </script>
 </body>
 </html>

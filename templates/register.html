@@ -38,6 +38,8 @@
         {% for category,msg in messages %}
         {% if category=='warning' %}
         <p style="color: red;">{{msg}}</p>
+        {% elif category=='success' %}
+        <p style="color: green;">{{msg}}</p>
         {% endif %}
         {% endfor %}
         {% endif %}
